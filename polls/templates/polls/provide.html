@@ -1,0 +1,47 @@
+{% extends 'polls/web.html'%}
+{% load static %}
+
+ {% block content %}
+
+<body>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+                    <h1 align="center"></h1>
+					 <form method="POST" class="form-horizontal" action="{% url 'provide' %}"> {% csrf_token %}
+					<table>
+                        <h1>Provide Medicine</h1>
+                            <div class="input-group">
+                                <label>Patient_ID</label>
+                                {{form.Patient_ID}}
+                            </div>
+                            <div class="input-group">
+                                <label>Patient_Name</label>
+                                {{form.Patient_Name}}
+                            </div>
+                            <div class="input-group">
+                                <label>Patient_Address </label>
+                                {{form.Patient_Address}}
+                            </div>
+
+                            <div class="input-group">
+                                <label>Provided_Medicine</label>
+                                {{form.Provided_Medicine}}
+                            </div>
+
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+					</table>
+					 </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+ {% endblock %}

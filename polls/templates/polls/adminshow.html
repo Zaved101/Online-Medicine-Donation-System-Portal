@@ -1,0 +1,51 @@
+{% extends "polls/web.html" %}
+{% load static %}
+{% block content %}
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<table class="center">
+    <thead class="thead-dark">
+      <h1 align="center">Patient Rx</h1>
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Patient Age</th>
+        <th>Patient Precribed</th>
+
+
+    </tr>
+    </thead>
+    {% for patient in rx %}
+    <tr>
+        <td>{{ patient.Patient_ID }}</td>
+        <td>{{ patient.Patient_Name }}</td>
+        <td>{{ patient.Patient_Age }}</td>
+        <td>{{ patient.Patient_Precribed }}</td>
+
+    </tr>
+    {% endfor %}
+</table>
+ {% endblock %}
+

@@ -1,0 +1,73 @@
+{% extends "polls/web.html" %}
+{% load static %}
+{% block content %}
+<style>
+.center {
+  margin: auto;
+  width: 30%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 20%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<table class="center">
+    <thead class="thead-dark">
+      <h1 align="center">Patient Rx</h1>
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Patient Address</th>
+        <th>Patient Age</th>
+        <th>Patient Phone Number</th>
+        <th>Patient Diseases</th>
+        <th>Patient Rx</th>
+        <th>Medicine Morning</th>
+        <th>Medicine Noon</th>
+        <th>Medicine Night</th>
+        <th>Per day</th>
+        <th>Total Medicine</th>
+
+
+
+    </tr>
+    </thead>
+    {% for patient in patients %}
+    <tr>
+        <td>{{ patient.Patient_ID }}</td>
+        <td>{{ patient.Patient_Name }}</td>
+        <td>{{ patient.Patient_Address }}</td>
+        <td>{{ patient.Patient_Age }}</td>
+        <td>{{ patient.Patient_Phone_Number }}</td>
+        <td>{{ patient.Patient_Diseases}}</td>
+        <td>{{ patient.Patient_Rx}}</td>
+        <td>{{ patient.Medicine_morning}}</td>
+        <td>{{ patient.Medicine_noon}}</td>
+        <td>{{ patient.Medicine_night}}</td>
+       <td>{{ patient.Per_day}}</td>-->
+       <td>{{ patient.Total_medicine}}</td>
+
+
+
+        <td> <a href="../StorePatientInformationEdit/{{ patient.Patient_ID }}"> Edit </a></td>
+        <td> <a href="../StorePatientInformationDelete/{{ patient.Patient_ID }}"> Delete </a></td>
+        <td> <a href="../done/{{ patient.Patient_ID }}"> Give Medicine </a></td>
+    </tr>
+    {% endfor %}
+</table>
+ {% endblock %}
+

@@ -1,0 +1,54 @@
+{% extends "polls/web.html" %}
+{% load static %}
+{% block content %}
+<style>
+.center {
+  margin: auto;
+  width: 60%;
+  border: 3px solid #73AD21;
+  padding: 10px;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 50%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+
+<table class="center">
+    <thead class="thead-dark">
+      <h1 align="center">Donner Gives</h1>
+    <tr>
+        <th>Medicine Name</th>
+        <th> Medicine Type</th>
+        <th> Medicine Mg</th>
+        <th>Medicine Expiriy Date</th>
+        <th>Medicine Quantity</th>
+
+
+
+
+    </tr>
+    </thead>
+    {% for give in medi %}
+    <tr>
+        <td>{{ give.Medicine_Name }}</td>
+        <td>{{ give.Medicine_Type }}</td>
+        <td>{{ give.Medicine_Mg }}</td>
+        <td>{{ give.Medicine_Expiriy_Date }}</td>
+        <td>{{ give.Medicine_Quantity }}</td>
+    </tr>
+    {% endfor %}
+</table>
+ {% endblock %}
+

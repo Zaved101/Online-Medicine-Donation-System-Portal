@@ -1,0 +1,64 @@
+{% load static %}
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="{% static 'polls/web.css' %}">
+<style>
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+.topnav a.active {
+  background-color: #4CAF50;
+  color: white;
+}
+</style>
+</head>
+<body>
+
+<div class="Head">
+      <h2>Welcome To Admin Portal</h2>
+      <p></p>
+    </div>
+</div>
+
+<div class="topnav">
+  <a href="{% url 'StorePatientInformation' %}">Store Patient Information</a></li>
+    <a href="{% url 'StorePatientInformationView' %}">View Patient Information</a></li>
+    <a href="{% url 'store' %}">Store Medicine Info</a></li>
+<!--	<a href="{% url 'showrx' %}">View Prescription</a></li>-->
+    <a href="{% url 'provide' %}">Provided Medicine</a></li>
+    <a href="{% url 'medi' %}">Given Medicine</a></li>
+    <a href="{% url 'adminlogout' %}">Log Out</a></li>
+</div>
+{% block content %}
+{% endblock content %}
+<footer>
+				<div id="footer">
+					<p> All Right Reserved By-HTML CSS</p>
+				</div>
+			</footer>
+
+
+</body>
+</html>
