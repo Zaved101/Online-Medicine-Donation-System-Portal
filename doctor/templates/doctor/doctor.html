@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>WEB</title>
+      {% load static %}
+    <link rel="stylesheet" href="{% static 'css/doctorcss.css' %}"/>
+  </head>
+  <body>
+
+<div class="wrapper">
+
+
+    <div class="Head">
+      <h2>Wellcome To Doctor Portal</h2>
+      <p></p>
+    </div>
+
+  <div class="nav">
+    <ul>
+    <li><a href="{% url 'show' %}">View Patient Information</a></li>
+    <li><a href="{% url 'profileview' %}">Profile</a></li>
+    <li><a href="{% url 'logout' %}">Log Out</a></li>
+</ul>
+<div class="Pic">
+    <img src="Max-1.jpg" alt="">
+</div>
+
+</div>
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+  </body>
+</html>

@@ -1,0 +1,51 @@
+
+{% include "doctor/doctor.html" %}
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css/style.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/util.css' %}">
+	<link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+ {% block content %}
+<body>
+	<div class="limiter">
+		<div class="container-table100">
+			<div class="wrap-table100">
+				<div class="table100">
+                    <h1 align="center"></h1>
+					 <form method="POST" class="form-horizontal" action="#"> {% csrf_token %}
+					<table>
+                        <h1>Precription</h1>
+                            <div class="input-group">
+                                <label>Patient Id</label>
+                                {{form.Patient_ID}}
+                            </div>
+                            <div class="input-group">
+                                <label>Patient Name</label>
+                                {{form.Patient_Name}}
+                            </div>
+                            <div class="input-group">
+                                <label>Patient Age </label>
+                                {{form.Patient_Age}}
+                            </div>
+                            <div class="input-group">
+                                <label>RX</label>
+                                <select>
+                                    <option value="volvo">Select A Medicine</option>
+                                    <option value="saab">Saab</option>
+                                    <option value="opel">Opel</option>
+                                    <option value="audi">Audi</option>
+                                </select>
+                                {{form.Patient_Precribed}}
+                            </div>
+
+                            <div class="input-group">
+                                <button type="submit" class="btn btn-success">Submit</button>
+                            </div>
+					</table>
+					 </form>
+				</div>
+			</div>
+		</div>
+	</div>
+</body>
+ {% endblock %}

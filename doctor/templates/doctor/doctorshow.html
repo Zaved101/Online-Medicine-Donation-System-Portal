@@ -1,0 +1,63 @@
+{% include "doctor/doctor.html" %}
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/doctorc.css' %}"/>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+</style>
+ {% block content %}
+<table class="table table-striped table-bordered table-sm">
+    <thead class="thead-dark">
+      <h1 align="center">Patient Information</h1>
+    <tr>
+        <th>Patient ID</th>
+        <th>Patient Name</th>
+        <th>Patient Address</th>
+        <th>Patient Age</th>
+        <th>Patient Phone Number</th>
+        <th>Patient Diseases</th>
+
+    </tr>
+    </thead>
+    {% for patient in patients %}
+    <tr>
+        <td>{{ patient.Patient_ID }}</td>
+        <td>{{ patient.Patient_Name }}</td>
+        <td>{{ patient.Patient_Address }}</td>
+        <td>{{ patient.Patient_Age }}</td>
+        <td>{{ patient.Patient_Phone_Number }}</td>
+        <td>{{ patient.Patient_Diseases}}</td>
+
+        <td> <a href="../StorePatientInformationEdit/{{ patient.Patient_ID }}"> Rx </a></td>
+
+    </tr>
+    {% endfor %}
+</table>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+ <footer>
+				<div id="footer">
+					<p> All Right Reserved By-HTML CSS</p>
+				</div>
+      </footer>
+ {% endblock %}
